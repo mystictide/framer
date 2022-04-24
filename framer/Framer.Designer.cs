@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblProcess = new System.Windows.Forms.Label();
             this.btnFile = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPNG = new System.Windows.Forms.Button();
@@ -58,12 +59,24 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblProcess);
             this.panel1.Controls.Add(this.btnFile);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(516, 219);
             this.panel1.TabIndex = 0;
+            // 
+            // lblProcess
+            // 
+            this.lblProcess.AutoSize = true;
+            this.lblProcess.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblProcess.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblProcess.Location = new System.Drawing.Point(85, 124);
+            this.lblProcess.Name = "lblProcess";
+            this.lblProcess.Size = new System.Drawing.Size(138, 17);
+            this.lblProcess.TabIndex = 1;
+            this.lblProcess.Text = "..awaiting file selection";
             // 
             // btnFile
             // 
@@ -78,7 +91,7 @@
             this.btnFile.Name = "btnFile";
             this.btnFile.Size = new System.Drawing.Size(390, 63);
             this.btnFile.TabIndex = 0;
-            this.btnFile.Text = "Select File";
+            this.btnFile.Text = "Select File(s)";
             this.btnFile.UseVisualStyleBackColor = true;
             this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
@@ -108,6 +121,7 @@
             this.btnPNG.TabIndex = 0;
             this.btnPNG.Text = "PNG";
             this.btnPNG.UseVisualStyleBackColor = true;
+            this.btnPNG.Click += new System.EventHandler(this.btnPNG_Click);
             // 
             // btnJPG
             // 
@@ -124,6 +138,7 @@
             this.btnJPG.TabIndex = 0;
             this.btnJPG.Text = "JPG";
             this.btnJPG.UseVisualStyleBackColor = true;
+            this.btnJPG.Click += new System.EventHandler(this.btnJPG_Click);
             // 
             // btnBMP
             // 
@@ -141,6 +156,7 @@
             this.btnBMP.TabIndex = 0;
             this.btnBMP.Text = "BMP";
             this.btnBMP.UseVisualStyleBackColor = false;
+            this.btnBMP.Click += new System.EventHandler(this.btnBMP_Click);
             // 
             // ofd
             // 
@@ -169,6 +185,7 @@
             this.Load += new System.EventHandler(this.Framer_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -184,5 +201,6 @@
         private Button btnBMP;
         private Button btnFile;
         private OpenFileDialog ofd;
+        private Label lblProcess;
     }
 }
